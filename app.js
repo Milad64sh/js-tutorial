@@ -1,14 +1,37 @@
-const people = [
- {name: 'john', age: 20, position:'developer', id: 2, salary: 200},
- {name: 'bob', age: 25, position:'designer', id: 2, salary: 300},
- {name: 'susy', age: 30, position:'the boss', id: 3, salary: 500},
-];
+const months = [
+ 'January',
+ 'February',
+ 'March',
+ 'April',
+ 'May',
+ 'June',
+ 'July',
+ 'August',
+ 'September',
+ 'October',
+ 'November',
+ 'December',
+]
 
-const total = people.reduce(function(acc, currItem){
-console.log(`total ${acc}`);
-console.log(`current money: ${currItem.salary}`);
-acc += currItem.salary;
- return acc;
-}, 0);
+const days = [
+ 'Sunday',
+ 'Monday',
+ 'Tuesday',
+ 'Wednesday',
+ 'Thursday',
+ 'Friday',
+ 'Saturday',
+]
 
-console.log(total);
+const date = new Date();
+const month = date.getMonth();
+console.log(months[month]);
+
+const day = date.getDay();
+console.log(days[day]);
+console.log(date.getDate());
+console.log(date.getFullYear());
+
+const sentence = `${days[day]}, ${date.getDate()}, ${months[month]}, ${date.getFullYear()}`;
+console.log(sentence);
+document.body.innerHTML = sentence;
