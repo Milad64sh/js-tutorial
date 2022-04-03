@@ -1,20 +1,10 @@
 const people = [
- {name: 'john', age: 20, position:'developer'},
- {name: 'bob', age: 25, position:'designer'},
- {name: 'susy', age: 30, position:'the boss'},
+ {name: 'john', age: 20, position:'developer', id: 2, salary: 200},
+ {name: 'bob', age: 25, position:'designer', id: 2, salary: 300},
+ {name: 'susy', age: 30, position:'the boss', id: 3, salary: 500},
 ];
- 
 
-const newPeople = people.map(function (person){
- return {
-  firstName: person.name.toUpperCase(),
-  oldAge: person.age + 20,
- }
-});
+const total = people.reduce(function(acc, currItem){
 
-const names = people.map(function(person){
- return `<h1>${person.name}</h1>`;
-});
-document.body.innerHTML = names.join('');
-
-console.log(names);
+ return acc;
+}, 0);
