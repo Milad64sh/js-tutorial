@@ -1,14 +1,7 @@
 const result = document.querySelector('#result');
-result.style.backgroundColor = 'blue';
 
-const item = document.querySelector('.special');
+const children = result.children;
+console.log(children);
 
-const lastItem = document.querySelector('li:last-child');
-console.log(lastItem);
-
-const list = document.querySelectorAll('.special');
-
-list.forEach(function(item){
- console.log(item);
- item.style.color = 'yellow';
-});
+console.log(result.firstChild);
+console.log(result.lastChild);
