@@ -1,7 +1,7 @@
-const result = document.querySelector('#result');
-
-const children = result.children;
-console.log(children);
-
-console.log(result.firstChild);
-console.log(result.lastChild);
+const names = ['john', 'jimmy', 'george', 'jennifer', 'johnson'];
+const lastName = 'shakeandbake';
+const newArray = [];
+for(let i = 0; i < names.length; i ++){
+ newArray.push(`${names[i]} ${lastName}`);
+}
+ console.log(newArray);
