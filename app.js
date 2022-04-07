@@ -1,7 +1,8 @@
-const names = ['john', 'jimmy', 'george', 'jennifer', 'johnson'];
-const lastName = 'shakeandbake';
-const newArray = [];
-for(let i = 0; i < names.length; i ++){
- newArray.push(`${names[i]} ${lastName}`);
-}
- console.log(newArray);
+const people = [
+ {name: 'bob', age: 20, position: 'Developer'},
+ {name: 'John', age: 25, position: 'Designer'},
+ {name: 'Susy', age: 30, position: 'the boss'},
+];
+people.forEach(function(item){
+console.log(item.position.toUpperCase());
+});
