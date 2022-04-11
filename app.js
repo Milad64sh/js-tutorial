@@ -1,14 +1,22 @@
-const btn = document.querySelector('.btn');
 const heading = document.querySelector('h2');
-
-function changeColors(){
- let hasClass = heading.classList.contains('red');
- if(hasClass){
-  heading.classList.remove('red');
- }else{
-  heading.classList.add('red');
- }
-}
+const btn = document.querySelector('.btn');
 
 
-btn.addEventListener('click',changeColors);
+
+heading.addEventListener('mouseenter',function(){
+ heading.classList.add('blue');
+})
+heading.addEventListener('mouseleave',function(){
+ heading.classList.remove('blue');
+})
+
+
+btn.addEventListener('click', function(){
+ console.log('you clicked me');
+});
+btn.addEventListener('mousedown', function(){
+ console.log('down');
+});
+btn.addEventListener('mouseup', function(){
+ console.log('up');
+});
