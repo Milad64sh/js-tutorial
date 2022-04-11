@@ -1,17 +1,20 @@
-const first = document.querySelector('#first');
-const second = document.querySelector('#second');
-const third = document.querySelector('#third');
+const result = document.querySelector('#result');
+const bodyDiv = document.createElement('div');
+const text = document.createTextNode('a simple body div');
+bodyDiv.appendChild(text);
+document.body.insertBefore(bodyDiv,result);
+bodyDiv.classList.add('blue');
+
+const heading = document.createElement('h2');
+heading.innerText = 'dynamic heading';
+result.appendChild(heading);
 
 
-first.className = 'colors';
-first.className = 'text colors';
+const smallHeading = document.createElement('h6');
+smallHeading.innerText = 'small heading';
+smallHeading.classList.add('blue');
+document.body.replaceChild(smallHeading,bodyDiv);
 
-second.classList.add('text','colors');
 
-second.classList.remove('colors');
-let result = second.classList.contains('text');
-if(result){
- console.log('hello world');
-} else{
- console.log('not valued');
-}
+
+console.log(result.children);
