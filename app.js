@@ -1,8 +1,15 @@
-const btns = document.querySelectorAll('.btn');
+const container = document.querySelector('.container');
+const list = document.querySelector('.list-items');
 
-btns.forEach(function(btn){
-btn.addEventListener('click',function(e){
- console.log(e.target);
- e.target.style.color = 'green'; 
-});
-});
+function showBubbling(e){
+ console.log('current target',e.currentTarget);
+ console.log('target',e.target);
+ if(e.target.classList.contains('link')){
+  console.log('you clicked on the link');
+ }
+}
+function stopPropagation(e){
+ e.stopPropagation();
+}
+
+list.addEventListener('click', stopPropagation);
