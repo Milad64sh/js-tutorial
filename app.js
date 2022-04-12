@@ -1,19 +1,8 @@
-const heading = document.querySelector('h1');
-const btn = document.querySelector('.btn');
-const link = document.querySelector('#link');
+const btns = document.querySelectorAll('.btn');
 
-function someFunc(e){
- e.preventDefault();
-}
-link.addEventListener('click',someFunc);
-
-heading.addEventListener('click', function(evt){
-console.log(evt.currentTarget);
-console.log(this);
+btns.forEach(function(btn){
+btn.addEventListener('click',function(e){
+console.log(e.currentTarget);
+e.currentTarget.style.color = 'green';
 });
-
-btn.addEventListener('click', function(evt){
-evt.currentTarget.classList.add('blue');
-console.log(evt.type);
 });
-
