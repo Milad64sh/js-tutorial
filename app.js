@@ -1,10 +1,18 @@
-const form = document.getElementById('form');
-const name = document.getElementById('name');
-const password = document.getElementById('password');
+const friends = ['john','peter','bob'];
 
-form.addEventListener('submit', function(e){
- e.preventDefault();
-  console.log('form submitted');
-  console.log(name.value);
-  console.log(password.value);
-});
+localStorage.setItem('friends',JSON.stringify(friends));
+
+const values =  JSON.parse(localStorage.getItem('friends'));
+console.log(values[0]);
+
+let fruits;
+if(localStorage.getItem('fruits')){
+ fruits = JSON.parse(localStorage.getItem('fruits'));
+}
+else{
+ fruits = [];
+}
+console.log(fruits);
+// fruits.push('apple');
+fruits.push('orange');
+localStorage.setItem('fruits', JSON.stringify(fruits));
