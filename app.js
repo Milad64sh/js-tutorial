@@ -1,18 +1,15 @@
-const friends = ['john','peter','bob'];
+const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
 
-localStorage.setItem('friends',JSON.stringify(friends));
+const btn = document.getElementById('btn');
+const color = document.querySelector('.color');
 
-const values =  JSON.parse(localStorage.getItem('friends'));
-console.log(values[0]);
+btn.addEventListener('click',function(){
+ const randomNumber = getRandomNumber();
+ console.log(randomNumber);
+ document.body.style.backgroundColor = colors[randomNumber];
+ color.textContent = colors[randomNumber];
+});
 
-let fruits;
-if(localStorage.getItem('fruits')){
- fruits = JSON.parse(localStorage.getItem('fruits'));
-}
-else{
- fruits = [];
-}
-console.log(fruits);
-// fruits.push('apple');
-fruits.push('orange');
-localStorage.setItem('fruits', JSON.stringify(fruits));
+function getRandomNumber(){
+ return Math.floor(Math.random() * colors.length);
+};
