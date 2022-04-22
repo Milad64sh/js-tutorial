@@ -10,3 +10,11 @@ if(!btn.classList.contains('slide')){
  video.play();
 }
 });
+
+// preloader
+const preloader = document.querySelector('.preloader');
+
+window.addEventListener('load',function(){
+ preloader.classList.add('lide-preloader');
+})
+
