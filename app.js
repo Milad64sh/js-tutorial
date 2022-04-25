@@ -37,4 +37,48 @@ month = months[month];
 const date = futureDate.getDate();
 const weekDay = weekdays[futureDate.getDay()];
 
-giveaway.textContent = `giveaway ends on ${weekDay}, ${date} ${month} ${year} ${hours}:${minutes}am`;
+giveaway.textContent = `giveaway ends on ${weekDay}, ${date} ${month} ${year} ${hours}:${minutes}`;
+
+// future time in ms
+const futureTime = futureDate.getTime();
+
+
+function getRemainingTime(){
+const today = new Date().getTime();
+const t = futureTime - today;
+// values in ms
+const oneDay = 24*60*60*1000;
+const oneHour = 60*60*1000;
+const oneMinute = 60*1000;
+let days = Math.floor(t / oneDay);
+let hours = Math.floor((t % oneDay) / oneHour);
+let minutes = Math.floor((t % oneHour) / oneMinute);
+let seconds = Math.floor((t % oneMinute) / 1000);
+
+// set values array
+const values = [days,hours,minutes,seconds];
+
+function format(item){
+  if(item < 10){
+    return item = `0${item}`
+  }
+  return item;
+}
+
+items.forEach(function(item, index){
+  item.innerHTML = format(values[index]);
+})
+if(t < 0){
+  clearInterval(countdown);
+  deadline.innerHTML = `<h4 class="expired">sorry, this giveaway has expired</h4>`;
+}
+}
+// countdown
+let countdown = setInterval(getRemainingTime,1000);
+
+getRemainingTime();
+
+// 1s = 1000ms
+// 1min = 60s
+// 1hr = 60min
+// 1day = 24hr 
