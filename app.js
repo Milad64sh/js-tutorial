@@ -38,8 +38,11 @@ function addItem(e){
               <button type="button" class="delete-btn">
                 <i class="fas fa-trash"></i>
               </button>
-            </div>`
-  
+            </div>`;
+    const deleteBtn = element.querySelector('.delete-btn'); 
+    const editBtn = element.querySelector('.edit-btn'); 
+    deleteBtn.addEventListener('click',deleteItem);
+    editBtn.addEventListener('click',editItem);
             // append child
   list.appendChild(element);
   
@@ -84,6 +87,14 @@ container.classList.remove('show-container');
 displayAlert('empty list','danger');
 setBackToDefault();
 // localStorage.removeItem('list');
+}
+// delete function
+function deleteItem(){
+  console.log('item deleted');
+}
+// edit function
+function editItem(){
+  console.log('item edit');
 }
 // set back to default
 function setBackToDefault(){
