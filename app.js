@@ -1,24 +1,19 @@
-
-
-
-
- function Person(firstName, lastName){
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.fullName = function(){
-      console.log(`My full name is ${this.firstName} ${this.lastName}`);
+function Account(name,initialBalance){
+ this.name = name;
+ this.balance = initialBalance;
  }
-}
 
-const john = new Person('john','sanders');
-// console.log(john.constructor);
 
-const bob = {};
-console.log(bob.constructor);
-const list = [];
-console.log(list.constructor);
-const sayHi = function(){};
-console.log(sayHi.constructor);
+const john = new Account('john',200);
+const bob = new Account('bob',0);
 
-const susy = new john.constructor('susy', 'carpenter'); 
-susy.fullName();
+Account.prototype.bank = 'CHASE';
+Account.prototype.deposit = function(amount){
+  this.balance += amount;
+  console.log(`Hello ${this.name}, your balance is ${this.balance}`);
+};
+
+console.log(john.bank);
+console.log(bob);
+
+john.deposit(300);
