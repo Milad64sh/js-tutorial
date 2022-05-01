@@ -1,19 +1,26 @@
-function Account(name,initialBalance){
- this.name = name;
- this.balance = initialBalance;
- }
-
-
-const john = new Account('john',200);
-const bob = new Account('bob',0);
-
-Account.prototype.bank = 'CHASE';
-Account.prototype.deposit = function(amount){
+class Account {
+constructor(name,initialBalance){
+this.name = name;
+this.balance = initialBalance;
+}
+bank = 'CHASE';
+deposit(amount){
   this.balance += amount;
   console.log(`Hello ${this.name}, your balance is ${this.balance}`);
-};
+}
+}
 
+const john = new Account('john',500);
+console.log(john);
+john.deposit(500);
 console.log(john.bank);
-console.log(bob);
 
-john.deposit(300);
+
+
+const bob = new Account('bob',700);
+console.log(bob);
+bob.deposit(500);
+bob.deposit(1000);
+console.log(bob.bank);
+
+
