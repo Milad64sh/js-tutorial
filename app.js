@@ -1,26 +1,30 @@
-class Account {
-constructor(name,initialBalance){
-this.name = name;
-this.balance = initialBalance;
-}
-bank = 'CHASE';
-deposit(amount){
-  this.balance += amount;
-  console.log(`Hello ${this.name}, your balance is ${this.balance}`);
-}
-}
-
-const john = new Account('john',500);
-console.log(john);
-john.deposit(500);
-console.log(john.bank);
+const john = {
+  name: 'john',
+  age: 24,
+  greet: function(){
+    console.log(this);
+    console.log(`Hello, I'm ${this.name} and I'm ${this.age} years old`);
+  },
+};
 
 
+const susan = {
+  name: 'susan',
+  age: 21,
+};
 
-const bob = new Account('bob',700);
-console.log(bob);
-bob.deposit(500);
-bob.deposit(1000);
-console.log(bob.bank);
+// john.greet();
 
+// this will fail
+// susan.greet();
+// const secondGreet = john.greet;
+// secondGreet();
 
+// function greet(){
+//       console.log(this);
+//     console.log(`Hello, I'm ${this.name} and I'm ${this.age} years old`);
+// }
+// greet.call(john);
+// greet.call(susan);
+// greet.call({name: 'peter', age: 30});
+john.greet.call(susan);
