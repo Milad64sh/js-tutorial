@@ -1,17 +1,15 @@
-
-
-
-function outer(){
-  let privateVar = 'secret';
-  function inner(){
-    console.log(`hello there secret is : ${privateVar}`);
+function newAccount (name,initialBalance){
+  let balance = initialBalance;
+  function showBalance(){
+    console.log(`Hey ${name}, your balance is ${balance}`);
   }
-  return inner;
-  inner();
+  return showBalance;
 }
 
-outer()();
+newAccount('susan', 500)();
 
-const value = outer();
-console.log(value);
-value();
+const john = newAccount('john', 300);
+const bob = newAccount('bob', 1000);
+
+john();
+bob();
