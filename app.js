@@ -1,30 +1,19 @@
-function newAccount (name,initialBalance){
-  let balance = initialBalance;
-  function showBalance(){
-    console.log(`Hey ${name}, your balance is ${balance}`);
-  }
-  function deposit(amount){
-    balance += amount;
-    showBalance();
-  }
-  function withdraw(amount){
-    if(amount > balance){
-      console.log(`hey ${name}, sorry not enough funds`);
-      return;
-    }
-    balance -= amount;
-    showBalance();
-  }
-  return {showBalance: showBalance, deposit:deposit, withdraw:withdraw}
+function Counter(classes, value){
+ console.log(classes,value);
 }
 
 
-const john = newAccount('john', 300);
-const bob = newAccount('bob', 1000);
 
-john.showBalance();
-john.deposit(400);
-john.deposit(1000);
-john.withdraw(400);
-john.withdraw(2001);
-bob.showBalance();
+firstCounter = new Counter (getClass('.first-counter', 0));
+secondCounter = new Counter (getClass('.second-counter', 50));
+
+
+function getClass (selection){
+ const classes =document.querySelector(selection);
+ if(classes){
+  return classes
+ }
+ throw new Error (
+  `Please check "${classes}" selector, no such classes exist`
+ );
+}
