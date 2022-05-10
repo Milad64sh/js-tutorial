@@ -7,6 +7,8 @@ const bob = {
   },
 };
 
-const {first: firstName,last,city,zip, siblings:{sister:favsibling}} = bob;
+function printPerson({first,last,city}){
 
-console.log(firstName,last,city,zip, favsibling);
+  console.log(first,last,city);
+};
+printPerson(bob);
