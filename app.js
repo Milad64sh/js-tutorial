@@ -1,22 +1,12 @@
 const bob = {
-  firstName : 'bob',
-  lastName : 'jordan',
-  sayName: function(){
-    console.log(this);
-    setTimeout(() =>{
-      console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
-    },2000);
+  first: 'bob',
+  last: 'sanders',
+  city: 'chicago',
+  siblings: {
+    sister: 'jane',
   },
 };
-bob.sayName();
 
+const {first: firstName,last,city,zip, siblings:{sister:favsibling}} = bob;
 
-const anna = {
-  firstName : 'anna',
-  lastName : 'sanders',
-  sayName: ()=>{
-    console.log(this);
-    console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
-  },
-};
-// anna.sayName();
+console.log(firstName,last,city,zip, favsibling);
