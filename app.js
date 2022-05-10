@@ -1,14 +1,21 @@
-const bob = {
-  first: 'bob',
-  last: 'sanders',
-  city: 'chicago',
-  siblings: {
-    sister: 'jane',
-  },
-};
+const longName = 'john smith pepper III';
+let shortName = '';
 
-function printPerson({first,last,city}){
 
-  console.log(first,last,city);
-};
-printPerson(bob);
+for(const letter of longName){
+ if (letter === ' '){
+  continue;
+ }
+ else{
+  shortName += letter;
+ }
+}
+console.log(shortName);
+
+const fruits = ['apple', 'orange', 'banana', 'peach'];
+for (const fruit of fruits){
+ if(fruit === 'banana'){
+  continue;
+ }
+ console.log(fruit);
+}
