@@ -1,19 +1,12 @@
-// arrays
-const fruit = ['apple','orange','lemon'];
-const [first,...fruits] = fruit;
-console.log(first,fruits);
+const p = document.querySelectorAll('p');
+const result = document.getElementById('result');
+const second = document.getElementById('second');
 
-// objects
-const person = {name: 'john', lastName: 'smith', job: 'developer'};
-const {job,...rest } = person;
-console.log(job,rest);
+let newText = Array.from(p);
+newText = newText.map(item => `<span>${item.textContent}</span>`).join(' ');
+result.innerHTML = newText;
 
-const testScores = [70, 80, 66, 34, 95, 100, 65];
-const getAverage = (name,...scores) =>{
-let total = 0;
-for(const score of scores){
- total += score;
-}
-console.log(`${name}'s average score is ${total/scores.length}`);
-};
-getAverage(person.name, ...testScores);
+const text = Array.from(document.querySelectorAll('p'), item=>{
+return `<span>${item.textContent}</span>`
+}).join(' ');
+second.innerHTML = text;
