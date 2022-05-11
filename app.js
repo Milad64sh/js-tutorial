@@ -1,21 +1,16 @@
-const longName = 'john smith pepper III';
-let shortName = '';
+const udemy = 'udemy';
+const letters = [...udemy];
+console.log(letters);
 
 
-for(const letter of longName){
- if (letter === ' '){
-  continue;
- }
- else{
-  shortName += letter;
- }
-}
-console.log(shortName);
+const boys = ['john','peter','bob'];
+const girls = ['susan','anna'];
+const bestfriend = 'arnold';
 
-const fruits = ['apple', 'orange', 'banana', 'peach'];
-for (const fruit of fruits){
- if(fruit === 'banana'){
-  continue;
- }
- console.log(fruit);
-}
+const friends = [...boys, bestfriend, ...girls];
+console.log(friends);
+
+const newFriends = [...friends];
+newFriends[0] = 'karina';
+console.log(newFriends);
+console.log(friends);
