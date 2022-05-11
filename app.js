@@ -1,16 +1,7 @@
-const udemy = 'udemy';
-const letters = [...udemy];
-console.log(letters);
+const headings = document.querySelectorAll('h1');
+const result = document.getElementById('result');
 
+const text = [...headings].map(item => `<span>${item.textContent}</span>`).join('');
 
-const boys = ['john','peter','bob'];
-const girls = ['susan','anna'];
-const bestfriend = 'arnold';
+result.innerHTML = text;
 
-const friends = [...boys, bestfriend, ...girls];
-console.log(friends);
-
-const newFriends = [...friends];
-newFriends[0] = 'karina';
-console.log(newFriends);
-console.log(friends);
