@@ -1,12 +1,11 @@
 
-import { random, people } from "./utils/data.js";
-import showPeople from './utils/showPeople.js';
-import get from './utils/getElement.js';
 
-const container = get('.container');
-const btn = get('.btn');
+boilWater(0);
+console.log('chop carrot');
 
-
-btn.addEventListener('click', ()=> {
- container.innerHTML = showPeople(people);
-}); 
+function boilWater(time){
+console.log('boiling...');
+ setTimeout(() => {
+    console.log('done');
+ }, time);
+}
