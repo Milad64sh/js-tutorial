@@ -5,14 +5,19 @@ const heading3 = document.querySelector('.three');
 const btn = document.querySelector('.btn');
 
 btn.addEventListener('click',()=>{
-   setTimeout(() => {
-      heading1.style.color = 'red';
-         setTimeout(() => {
-      heading2.style.color = 'green';
-         setTimeout(() => {
-      heading3.style.color = 'blue';
-   },1000);
-   },2000);
-   },1000);
+
 });
 
+const promise = new Promise((resolve,reject)=>{
+   let value = false;
+   if(value){
+      resolve('hey value is true');
+   }else{
+      reject(`there was an error, the value is false`)
+   }
+});
+promise.then((taco)=>{
+   console.log(taco);
+}).catch((err) =>{
+   console.log(err);
+})
