@@ -1,32 +1,18 @@
+const xhr = new XMLHttpRequest();
+// console.log(xhr);
 
-
-const heading1 = document.querySelector('.one');
-const heading2 = document.querySelector('.two');
-const heading3 = document.querySelector('.three');
-const btn = document.querySelector('.btn');
-
-btn.addEventListener('click',async()=>{
-
-try {
-   const first = await addColor(1000,heading1,'red');
-await addColor(1000,heading2,'green');
-await addColor(1000,heading3,'blue');
-} catch (error) {
-   console.log(error);
+xhr.open('GET','./api/sample.txt');
+xhr.onreadystatechange = function(){
+   if(xhr.readyState === 4 && xhr.status === 200){
+ const text = document.createElement('p');
+ text.textContent = xhr.responseText;
+ document.body.appendChild(text);
+   }else{
+      console.log({
+         status: xhr.status,
+         text: xhr.statusText,
+      });
+   }
 }
-});
-
-
-function addColor (time,element,color){
-   return new Promise((resolve,reject)=>{
-      if(element){
-       setTimeout(()=>{
-      element.style.color = color;
-      resolve();
-      },time)
-      }
-      else{
-         reject(new Error(`there is no such element ${element}`)); 
-      }
-   })
-}
+xhr.send();
+console.log('hello world');
