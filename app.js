@@ -4,10 +4,11 @@ const content = document.querySelector('.content');
 const URL = "https://api.chucknorris.io/jokes/random";
 
 btn.addEventListener('click', ()=>{
-getData(URL)
+fetch(URL)
+.then((data) => data.json())
 .then(response => displayData(response))
-.catch((err) =>console.log(err));
-})
+.catch((err)=>console.log(err));
+});
 
 
 function getData(url){
@@ -30,7 +31,6 @@ function getData(url){
   };
  })
 }
-function displayData (data){
-     const {value:joke} = JSON.parse(data);
-    content.textContent = joke;
+function displayData ({value:joke}){
+    content.textContent = joke; 
 }
