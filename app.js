@@ -1,36 +1,29 @@
-
 function greetingPeople(firstName,lastName,title,company){
-    return{
-        firstName,
-        lastName,
-        job: {
+return{
+    firstName,
+    lastName,
+    job:{
         company,
         title,
-        },
-
-        greeting: function(){
-        console.log(`my name is ${this.firstName} and I work as ${this.job.title} in ${this.job.company}`);
+    },
+    greeting(){
+        console.log(`hello there, my name is ${this.firstName} ${this.lastName} I work as a ${this.job.title} in ${this.job.company}`);
     }
 }
 }
 
-// const person ={
-//     name: 'john',
-//     surname: 'jordan',
-//     job:{
-//         company: 'DMA',
-//         title: 'Developer'
-//     },
-//     }
+function Gr(firstName,lastName,title,company){
+    this.firstName=firstName,
+    this.lastName=lastName,
+    this.job = {
+        title,
+        company
+    }
+    this.greeting=function(){
+        console.log(`hello there, my name is ${this.firstName} ${this.lastName} I work as a ${this.job.title} in ${this.job.company}`);
+    }
+}
 
-// const people ={
-//     name: 'james',
-//     surname: 'jordan',
-//     job:{
-//         company: 'DDD',
-//         title: 'Developer'
-//     },
-// }
-const john = greetingPeople('john', 'sanders','developer','DMA');
+
+const john = new Gr('john','samuel','web dev', 'DDD');
 john.greeting();
-// people.greeting();
