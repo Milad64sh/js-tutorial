@@ -1,36 +1,36 @@
 
-const btn = document.querySelector('.btn');
-const content = document.querySelector('.content');
-const URL = "https://api.chucknorris.io/jokes/random";
+function greetingPeople(firstName,lastName,title,company){
+    return{
+        firstName,
+        lastName,
+        job: {
+        company,
+        title,
+        },
 
-btn.addEventListener('click', ()=>{
-fetch(URL)
-.then((data) => data.json())
-.then(response => displayData(response))
-.catch((err)=>console.log(err));
-});
-
-
-function getData(url){
- return new Promise((resolve,reject)=>{
-
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET',url);
-  xhr.send();
-  xhr.onreadystatechange = function(){
-   if(xhr.readyState !==4)return;
-   if(xhr.status === 200){
-   resolve(xhr.responseText);
-   }
-   else{
-    reject({
-     status:xhr.status,
-     text:xhr.statusText,
-    });
-   }
-  };
- })
+        greeting: function(){
+        console.log(`my name is ${this.firstName} and I work as ${this.job.title} in ${this.job.company}`);
+    }
 }
-function displayData ({value:joke}){
-    content.textContent = joke; 
 }
+
+// const person ={
+//     name: 'john',
+//     surname: 'jordan',
+//     job:{
+//         company: 'DMA',
+//         title: 'Developer'
+//     },
+//     }
+
+// const people ={
+//     name: 'james',
+//     surname: 'jordan',
+//     job:{
+//         company: 'DDD',
+//         title: 'Developer'
+//     },
+// }
+const john = greetingPeople('john', 'sanders','developer','DMA');
+john.greeting();
+// people.greeting();
