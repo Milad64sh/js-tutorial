@@ -1,29 +1,21 @@
-function greetingPeople(firstName,lastName,title,company){
-return{
-    firstName,
-    lastName,
-    job:{
-        company,
-        title,
-    },
-    greeting(){
-        console.log(`hello there, my name is ${this.firstName} ${this.lastName} I work as a ${this.job.title} in ${this.job.company}`);
-    }
-}
-}
+const heading1 = document.querySelector('.one');
+const heading2 = document.querySelector('.two');
+const heading3 = document.querySelector('.three');
 
-function Gr(firstName,lastName,title,company){
-    this.firstName=firstName,
-    this.lastName=lastName,
-    this.job = {
-        title,
-        company
-    }
-    this.greeting=function(){
-        console.log(`hello there, my name is ${this.firstName} ${this.lastName} I work as a ${this.job.title} in ${this.job.company}`);
-    }
-}
+const btn = document.querySelector('.btn');
 
-
-const john = new Gr('john','samuel','web dev', 'DDD');
-john.greeting();
+btn.addEventListener('click', ()=>{
+const promise = new Promise((resolve,reject)=>{
+  let value = true;
+  if(value){
+    resolve('hey the value is true');
+  }else{
+    reject('hey the value is false');
+  }
+});
+promise.then((data)=>{
+  console.log(data);
+}).catch((err)=>{
+  console.log(err);
+})
+});
