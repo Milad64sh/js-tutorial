@@ -2,63 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random User</title>
+    <title>Cocktails</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
+    <!-- css -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <div class="block bcg-black"></div>
-    <div class="block">
-      <div class="container">
-        <img
-          src="https://randomuser.me/api/portraits/men/75.jpg"
-          alt="random User"
-          class="user-img"
-        />
-        <p class="user-title">my name is</p>
-        <p class="user-value">John Smith</p>
-        <div class="values-list">
-          <!-- single icon -->
-          <button class="icon" data-label="name">
-            <span class="far fa-user"></span>
-          </button>
-          <!-- end of single icon -->
-          <!-- single icon -->
-          <button class="icon" data-label="email">
-            <span class="far fa-envelope-open"></span>
-          </button>
-          <!-- end of single icon -->
-          <!-- single icon -->
-          <button class="icon" data-label="age">
-            <span class="fas fa-calendar-times"></span>
-          </button>
-          <!-- end of single icon -->
-          <!-- single icon -->
-          <button class="icon" data-label="street">
-            <span class="far fa-map"></span>
-          </button>
-          <!-- end of single icon -->
-          <!-- single icon -->
-          <button class="icon" data-label="phone">
-            <span class="fas fa-phone"></span>
-          </button>
-          <!-- end of single icon -->
-          <!-- single icon -->
-          <button class="icon" data-label="password">
-            <span class="fas fa-user-lock"></span>
-          </button>
-          <!-- end of single icon -->
-        </div>
-      </div>
-      <button class="btn" type="button">random user</button>
+  <form class="search-form">
+    <h2>cocktails API</h2>
+    <input
+      type="text"
+      placeholder="search your favorite cocktail"
+      name="drink"
+    />
+  </form>
+  <section class="section cocktail">
+    <article class="loading hide-loading">
+      <img src="./loading.gif" alt="loading" />
+    </article>
+    <h2 class="title"></h2>
+    <div class="section-center">
+      <!-- single drink -->
+      <a href="drink.html">
+        <article class="cocktail" data-id="1">
+          <img src="./cocktail.jpg" alt="cocktail" />
+          <h3>martini</h3>
+        </article>
+      </a>
+      <!-- end of single drink -->
+      <!-- single drink -->
+      <a href="drink.html">
+        <article class="cocktail" data-id="1">
+          <img src="./cocktail.jpg" alt="cocktail" />
+          <h3>martini</h3>
+        </article>
+      </a>
+      <!-- end of single drink -->
+      <!-- single drink -->
+      <a href="drink.html">
+        <article class="cocktail" data-id="1">
+          <img src="./cocktail.jpg" alt="cocktail" />
+          <h3>martini</h3>
+        </article>
+      </a>
+      <!-- end of single drink -->
     </div>
-    <!-- javascript -->
+  </section>
+  <body>
     <script type="module" src="./app.js"></script>
   </body>
 </html>
