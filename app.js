@@ -1,29 +1,32 @@
-const heading1 = document.querySelector('.one');
-const heading2 = document.querySelector('.two');
-const heading3 = document.querySelector('.three');
 const btn = document.querySelector('.btn');
-
-btn.addEventListener('click', async ()=>{
-  try {
-    await addColor(1000,heading1,'red')
-    await addColor(2000,heading2,'blue')
-    await addColor(1000,heading3,'green')
-  }
-  catch (error) {
-    console.log(error);
-  }
+const url = './api/text.json';
+btn.addEventListener('click', () => {
+  getData(url);
 });
 
+function getData(url) {
+  const xhr = new XMLHttpRequest();
+  console.log(xhr);
 
-function addColor(time,element,color){
-  return new Promise((resolve,reject)=>{
-    if(element){
-      setTimeout(()=>{
-        element.style.color = color;
-        resolve();
-      },time);
-    }else{
-      reject(new Error(`there is no such element ${element}`))
+  xhr.open('GET', url);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
+      const displayData = data
+        .map((item) => {
+          return `<p>${item.name}</p>`;
+        })
+        .join('');
+      const element = document.createElement('div');
+      element.innerHTML = displayData;
+      document.appendChild(element);
+    } else {
+      console.log({
+        status: xhr.status,
+        text: xhr.statusText,
+        state: xhr.readyState,
+      });
     }
-  })
+  };
+  xhr.send();
 }
