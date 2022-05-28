@@ -1,32 +1,17 @@
-const btn = document.querySelector('.btn');
-const url = './api/text.json';
-btn.addEventListener('click', () => {
-  getData(url);
-});
+import get from './utils/getElement.js';
+import getUser from './utils/fetch.js';
 
-function getData(url) {
-  const xhr = new XMLHttpRequest();
-  console.log(xhr);
+const img = get('.user-img');
+const title = get('.user-title');
+const value = get('.user-value');
+const btn = get('.btn');
+const btns = [...document.querySelectorAll('.icon')];
 
-  xhr.open('GET', url);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      const data = JSON.parse(xhr.responseText);
-      const displayData = data
-        .map((item) => {
-          return `<p>${item.name}</p>`;
-        })
-        .join('');
-      const element = document.createElement('div');
-      element.innerHTML = displayData;
-      document.appendChild(element);
-    } else {
-      console.log({
-        status: xhr.status,
-        text: xhr.statusText,
-        state: xhr.readyState,
-      });
-    }
-  };
-  xhr.send();
-}
+const showUser = async () => {
+  // get user from api
+  const person = await getUser();
+  console.log(person);
+};
+
+window.addEventListener('DOMContentLoaded', showUser);
+btn.addEventListener('click', showUser);
