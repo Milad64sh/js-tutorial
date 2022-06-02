@@ -3,69 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stripe Setup</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
 
-    <!-- stylesheet -->
+    <!-- styles css -->
     <link rel="stylesheet" href="styles.css" />
+    <title>Home | Comfy</title>
   </head>
   <body>
     <!-- navbar -->
-    <nav class="nav">
+    <nav class="navbar">
       <div class="nav-center">
-        <div class="nav-header">
-          <img src="./images/logo.svg" class="nav-logo" alt="logo" />
-          <button class="btn toggle-btn">
+        <!-- links -->
+        <div>
+          <button class="toggle-nav">
             <i class="fas fa-bars"></i>
           </button>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li>
+              <a href="about.html" class="nav-link">about</a>
+            </li>
+            <li>
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+          </ul>
         </div>
-        <ul class="nav-links">
-          <li>
-            <button class="link-btn">products</button>
-          </li>
-          <li>
-            <button class="link-btn">developers</button>
-          </li>
-          <li>
-            <button class="link-btn">company</button>
-          </li>
-        </ul>
-        <button class="btn signing-btn">sign in</button>
+        <!-- logo -->
+        <img src="./images/logo-white.svg" class="nav-logo" alt="logo" />
+        <!-- cart icon -->
+        <div class="toggle-container">
+          <button class="toggle-cart">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <span class="cart-item-count">1</span>
+        </div>
       </div>
     </nav>
     <!-- hero -->
     <section class="hero">
-      <div class="hero-center">
-        <article class="hero-info">
-          <h1>payments infrastructre <br />for the internet</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae labore
-            culpa ullam corrupti perspiciatis accusamus nisi exercitationem nam
-            magni, officiis pariatur voluptas architecto! Voluptatibus quidem
-            consectetur suscipit voluptate laboriosam sed!
-          </p>
-          <button class="btn">start now</button>
-        </article>
-        <article class="hero-images">
-          <img src="./images/phone.svg" class="phone-img" alt="phone" />
-        </article>
+      <div class="hero-container">
+        <h1 class="text-slanted">rest, relax, unwind</h1>
+        <h3>embrace your choices - we do</h3>
+        <a href="products.html" class="hero-btn">show now</a>
       </div>
     </section>
-    <!-- sidebar -->
-    <div class="sidebar-wrapper">
-      <aside class="sidebar">
-        <button class="close-btn">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="sidebar-links"></div>
-      </aside>
-    </div>
-    <!-- links -->
-    <aside class="submenu"></aside>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
